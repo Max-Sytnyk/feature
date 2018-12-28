@@ -1,0 +1,35 @@
+{
+  "name": "_test-pretty_husky",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^1.2.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run pretty",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "eslint": "^5.11.0",
+    "eslint-config-prettier": "^3.3.0",
+    "normalize.css": "^8.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
